@@ -1,8 +1,9 @@
 import random
 
+
 class Prim:
     # Matri de adjacencia
-    def exec(self, matriz, noInicial):
+    def execute(self, matriz, noInicial):
 
         #Inicializando variáveis
         tamanho = len(matriz)
@@ -30,12 +31,8 @@ class Prim:
                     pesos[idxLinha] = matriz[minimo][idxLinha]
                     counter += 1
 
-        #Exibir no console
-        for idxp in range(1, tamanho):
-            tx = "Aresta: " + str(parent[idxp]) + " - " + str(idxp) + "   //   Peso: " + str(matriz[idxp][parent[idxp]])
-            print(tx)
 
-        print(pesos)
+        return (parent, pesos)
 
     # Procura menor no ainda não incluido na mst
     def menorNoRestante(self, arr, mstSet, size):
@@ -104,4 +101,4 @@ if __name__ == "__main__":
 
     print(lista)
 
-    prim.exec(lista, 6)
+    prim.execute(lista, 6)

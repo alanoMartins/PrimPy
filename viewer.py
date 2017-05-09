@@ -16,15 +16,11 @@ if __name__ == "__main__":
     prim = PrimAlg.Prim()
     par, pes = prim.execute(mat, 0)
 
-    tempG = nx.MultiGraph()
+    G = nx.MultiGraph()
 
     for idx in range(0, len(mat)):
-        G = nx.MultiGraph()
         G.add_edge(idx, par[idx])
         G.node[idx]['color'] = 'blue'
-        tempG = G
-
-
 
     app = Viewer(G)
     app.mainloop()
